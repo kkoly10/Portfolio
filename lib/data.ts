@@ -6,6 +6,7 @@ export const profile = {
   github: "https://github.com/kkoly10",
   email: "komlankouhiko@icloud.com",
   resume: "/resume.pdf",
+  photo: "/komlan.jpg",
 };
 
 // Tech shown as pills under the hero intro.
