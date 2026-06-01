@@ -12,10 +12,8 @@ export const profile = {
   // Longer, keyword-rich prose for crawlers and the Person schema description.
   bio: "Komlan Kouhiko is a full-stack software engineer who designs and ships production-ready SaaS products end to end — from authentication, dashboards, and Stripe billing to AI/LLM workflows built on the OpenAI and Anthropic APIs. He works primarily with Next.js, React, TypeScript, Supabase, and Vercel, and has independently built and launched five live SaaS platforms across service operations, IT support, fleet management, rentals, and web studio workflows.",
   github: "https://github.com/kkoly10",
-  // Public LinkedIn profile URL (must be the linkedin.com/in/... form).
-  // Leave "" until you have it — it is intentionally excluded from `socials`
-  // and `sameAs` while empty so a broken link never reaches search engines.
-  linkedin: "",
+  // Public LinkedIn profile URL (the linkedin.com/in/... form).
+  linkedin: "https://www.linkedin.com/in/komlan-crecy-olympe-kouhiko-60aa85407/",
   email,
   mailto: `mailto:${email}`,
   resume: "/resume.pdf",
