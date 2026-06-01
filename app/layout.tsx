@@ -31,8 +31,26 @@ export const metadata: Metadata = {
     "Anthropic",
     "OpenAI",
   ],
-  authors: [{ name: profile.name }],
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  publisher: profile.name,
   alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // Paste your Google Search Console token into NEXT_PUBLIC_GOOGLE_VERIFICATION
+  // (or set it here) to verify domain ownership.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION }
+    : undefined,
   // OG / Twitter images are provided by app/opengraph-image.tsx (file convention).
   openGraph: {
     title: `${profile.name} — ${profile.title}`,
@@ -40,6 +58,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: profile.name,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
