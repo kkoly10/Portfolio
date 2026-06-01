@@ -14,7 +14,10 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-6">
-        <Link href="#top" className="text-sm font-semibold tracking-tight">
+        <Link
+          href="#top"
+          className="rounded-md text-sm font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        >
           {profile.name}
         </Link>
 
@@ -23,7 +26,7 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-ink/70 transition-colors hover:text-ink"
+              className="rounded-md text-sm text-ink/70 transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
             >
               {link.label}
             </Link>

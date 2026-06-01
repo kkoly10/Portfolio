@@ -1,10 +1,13 @@
+const email = "komlankouhiko@icloud.com";
+
 export const profile = {
   name: "Komlan Kouhiko",
   title: "Full-Stack Developer | AI/LLM SaaS Builder",
   intro:
     "I build production-ready SaaS products, dashboards, portals, AI-assisted workflows, and business operations tools using Next.js, React, TypeScript, Supabase, Stripe, OpenAI, Anthropic, and Vercel.",
   github: "https://github.com/kkoly10",
-  email: "komlankouhiko@icloud.com",
+  email,
+  mailto: `mailto:${email}`,
   resume: "/resume.pdf",
   photo: "/komlan.jpg",
 };

@@ -16,6 +16,11 @@ body {
   @apply bg-paper text-ink antialiased;
 }
 
+::selection {
+  background-color: rgba(31, 58, 95, 0.15);
+  color: #1c1917;
+}
+
 @layer components {
   /* Reusable premium card surface */
   .card {

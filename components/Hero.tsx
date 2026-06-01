@@ -55,7 +55,7 @@ export function Hero() {
             <Button href={profile.github} variant="secondary">
               <GitHubIcon /> GitHub
             </Button>
-            <Button href={`mailto:${profile.email}`} variant="secondary">
+            <Button href={profile.mailto} variant="secondary">
               <MailIcon /> Email Me
             </Button>
           </div>

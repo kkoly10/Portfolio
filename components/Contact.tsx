@@ -4,9 +4,16 @@ import { GitHubIcon, MailIcon, DownloadIcon } from "./ui/icons";
 
 export function Contact() {
   return (
-    <section id="contact" className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-28"
+    >
       <div className="card glow relative overflow-hidden p-8 text-center sm:p-16">
-        <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h2
+          id="contact-heading"
+          className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl"
+        >
           Want to review my resume or see the code behind my work?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base text-ink/60 sm:text-lg">
@@ -21,7 +28,7 @@ export function Contact() {
           <Button href={profile.github} variant="secondary">
             <GitHubIcon /> View GitHub
           </Button>
-          <Button href={`mailto:${profile.email}`} variant="secondary">
+          <Button href={profile.mailto} variant="secondary">
             <MailIcon /> Email Me
           </Button>
         </div>

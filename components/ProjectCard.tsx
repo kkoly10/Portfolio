@@ -31,7 +31,7 @@ export function ProjectCard({ project }: { project: Project }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open the live ${project.name} site in a new tab`}
-        className="relative block aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2"
+        className="relative block aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent/60"
       >
         {imgFailed ? (
           <ThumbPlaceholder name={project.name} thumbnail={project.thumbnail} />

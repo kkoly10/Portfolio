@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { profile } from "@/lib/data";
 
@@ -8,6 +8,16 @@ type NavLink = { href: string; label: string };
 
 export function MobileMenu({ links }: { links: NavLink[] }) {
   const [open, setOpen] = useState(false);
+
+  // Close the menu on Escape for keyboard users.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <div className="md:hidden">
@@ -43,7 +53,7 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-ink/80 transition-colors hover:bg-surface-2 hover:text-ink"
+                className="rounded-lg px-3 py-3 text-base text-ink/80 transition-colors hover:bg-surface-2 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
               >
                 {link.label}
               </Link>
@@ -53,7 +63,7 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-1 rounded-lg bg-accent px-3 py-3 text-center text-base font-medium text-white"
+              className="mt-1 rounded-lg bg-accent px-3 py-3 text-center text-base font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
             >
               Resume
             </a>

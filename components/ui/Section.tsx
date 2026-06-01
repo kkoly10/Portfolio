@@ -17,9 +17,12 @@ export function Section({
   children,
   className = "",
 }: Props) {
+  const headingId = id ? `${id}-heading` : undefined;
+
   return (
     <section
       id={id}
+      aria-labelledby={headingId}
       className={`mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-24 ${className}`}
     >
       <Reveal className="mb-10 sm:mb-14">
@@ -28,7 +31,7 @@ export function Section({
             {eyebrow}
           </p>
         )}
-        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h2 id={headingId} className="text-3xl font-semibold tracking-tight sm:text-4xl">
           {title}
         </h2>
         {subtitle && (
