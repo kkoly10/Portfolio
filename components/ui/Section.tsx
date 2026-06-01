@@ -32,7 +32,7 @@ export function Section({
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-4 max-w-2xl text-base text-white/60 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base text-ink/60 sm:text-lg">
             {subtitle}
           </p>
         )}

@@ -3,14 +3,14 @@ import Link from "next/link";
 type Variant = "primary" | "secondary" | "ghost";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950";
+  "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white shadow-[0_0_30px_-8px_rgba(124,92,255,0.7)] hover:bg-accent-soft hover:shadow-[0_0_40px_-6px_rgba(124,92,255,0.85)]",
+    "bg-accent text-white shadow-[0_8px_20px_-8px_rgba(31,58,95,0.5)] hover:bg-accent-soft hover:shadow-[0_10px_24px_-8px_rgba(31,58,95,0.6)]",
   secondary:
-    "border border-line bg-ink-800/60 text-white hover:border-white/20 hover:bg-ink-700",
-  ghost: "text-white/70 hover:text-white",
+    "border border-line bg-surface text-ink hover:border-ink/20 hover:bg-surface-2",
+  ghost: "text-ink/70 hover:text-ink",
 };
 
 type Props = {

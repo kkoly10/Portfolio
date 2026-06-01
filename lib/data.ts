@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Cloudinary",
       "Vercel",
     ],
-    thumbnail: "/projects/proveo.png",
+    thumbnail: "/projects/proveo.jpg",
   },
   {
     name: "Kocre IT",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     description:
       "Built a fleet operations platform for vehicles, drivers, maintenance, repairs, documents, expenses, readiness, reports, and AI Copilot-style fleet insights.",
     stack: ["Next.js", "React", "Supabase", "Stripe", "Anthropic", "Mapbox", "Vercel"],
-    thumbnail: "/projects/fleiko.png",
+    thumbnail: "/projects/fleiko.jpg",
   },
   {
     name: "Korent",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     description:
       "Built a rental platform with storefronts, product catalogs, availability, checkout, deposits, order management, digital waivers, delivery routing, reminders, and admin workflows.",
     stack: ["Next.js", "React", "Supabase", "Stripe", "Twilio", "Resend", "Vercel"],
-    thumbnail: "/projects/korent.png",
+    thumbnail: "/projects/korent.jpg",
   },
   {
     name: "CrecyStudio",

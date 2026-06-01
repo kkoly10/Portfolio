@@ -9,7 +9,7 @@ export function Contact() {
         <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
           Want to review my resume or see the code behind my work?
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base text-white/60 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-xl text-base text-ink/60 sm:text-lg">
           I&apos;m open to SaaS builds, AI integrations, and full-stack contract
           work. Let&apos;s talk.
         </p>

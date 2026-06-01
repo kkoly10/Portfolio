@@ -10,13 +10,13 @@ import { GitHubIcon, ExternalIcon } from "./ui/icons";
 // Polished placeholder shown until a real screenshot is dropped into /public/projects.
 function ThumbPlaceholder({ name }: { name: string }) {
   return (
-    <div className="glow flex h-full w-full flex-col items-center justify-center bg-ink-900 text-center">
-      <div className="rounded-xl border border-dashed border-white/15 px-5 py-4">
-        <p className="text-sm font-medium text-white/80">{name}</p>
-        <p className="mt-1 text-xs text-white/40">
+    <div className="glow flex h-full w-full flex-col items-center justify-center bg-surface-2 text-center">
+      <div className="rounded-xl border border-dashed border-ink/15 px-5 py-4">
+        <p className="text-sm font-medium text-ink/80">{name}</p>
+        <p className="mt-1 text-xs text-ink/40">
           Screenshot goes here
         </p>
-        <p className="mt-0.5 text-[11px] text-white/30">
+        <p className="mt-0.5 text-[11px] text-ink/30">
           /public/projects/{name.toLowerCase().replace(/\s+/g, "")}.png
         </p>
       </div>
@@ -28,14 +28,14 @@ export function ProjectCard({ project }: { project: Project }) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
-    <article className="card group flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_24px_60px_-24px_rgba(124,92,255,0.45)]">
+    <article className="card group flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_60px_-24px_rgba(31,58,95,0.30)]">
       {/* Clickable thumbnail -> opens live site in a new tab */}
       <a
         href={project.live}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open the live ${project.name} site in a new tab`}
-        className="relative block aspect-[16/10] w-full overflow-hidden border-b border-line bg-ink-900"
+        className="relative block aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2"
       >
         {imgFailed ? (
           <ThumbPlaceholder name={project.name} />
@@ -49,7 +49,7 @@ export function ProjectCard({ project }: { project: Project }) {
             onError={() => setImgFailed(true)}
           />
         )}
-        <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-lg bg-ink-950/80 px-2.5 py-1 text-xs font-medium text-white/80 opacity-0 backdrop-blur transition-opacity duration-200 group-hover:opacity-100">
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-lg bg-ink/80 px-2.5 py-1 text-xs font-medium text-white opacity-0 backdrop-blur transition-opacity duration-200 group-hover:opacity-100">
           <ExternalIcon className="h-3.5 w-3.5" /> Live
         </span>
       </a>
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold tracking-tight">{project.name}</h3>
         <p className="mt-1 text-sm font-medium text-accent-soft">{project.title}</p>
-        <p className="mt-3 text-sm leading-relaxed text-white/60">
+        <p className="mt-3 text-sm leading-relaxed text-ink/60">
           {project.description}
         </p>
 

@@ -22,8 +22,8 @@ export function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-5 pb-16 pt-20 sm:px-6 sm:pb-24 sm:pt-28 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
         <motion.div className="max-w-2xl" {...enter(0)}>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-ink-800/60 px-3 py-1 text-xs text-white/70">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-ink/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             Available for SaaS & AI build projects
           </div>
 
@@ -34,7 +34,7 @@ export function Hero() {
             {profile.title}
           </p>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65 sm:text-lg">
             {profile.intro}
           </p>
 
@@ -52,7 +52,7 @@ export function Hero() {
 
           {/* Stack preview */}
           <div className="mt-10">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/40">
+            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-ink/40">
               Core stack
             </p>
             <div className="flex flex-wrap gap-2">
@@ -64,14 +64,14 @@ export function Hero() {
         </motion.div>
 
         {/* Portrait */}
-        <motion.div className="order-first lg:order-none lg:justify-self-end" {...enter(0.15)}>
-          <div className="relative mx-auto w-44 sm:w-52 lg:mx-0 lg:w-full lg:max-w-[340px]">
+        <motion.div className="order-first w-full lg:order-none lg:justify-self-end" {...enter(0.15)}>
+          <div className="relative mx-auto w-44 sm:w-52 lg:mx-0 lg:w-[340px] lg:max-w-full">
             {/* Soft accent glow behind the portrait */}
             <div
-              className="absolute -inset-4 rounded-[2rem] bg-accent/20 blur-2xl"
+              className="absolute -inset-4 rounded-[2rem] bg-accent/15 blur-2xl"
               aria-hidden="true"
             />
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-ink-800">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-line bg-surface-2 shadow-[0_20px_50px_-20px_rgba(28,25,23,0.25)]">
               <Image
                 src={profile.photo}
                 alt={`Portrait of ${profile.name}, ${profile.title}`}
