@@ -29,3 +29,7 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+
+# original full-res source photos (not deployed)
+.source-photos/

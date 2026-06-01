@@ -13,10 +13,10 @@ export function WhatIBuild() {
         {whatIBuild.map((item) => (
           <div
             key={item.title}
-            className="card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15"
+            className="card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30"
           >
             <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/60">
+            <p className="mt-2 text-sm leading-relaxed text-ink/60">
               {item.description}
             </p>
           </div>

@@ -1,16 +1,15 @@
 import Link from "next/link";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950";
+  "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white shadow-[0_0_30px_-8px_rgba(124,92,255,0.7)] hover:bg-accent-soft hover:shadow-[0_0_40px_-6px_rgba(124,92,255,0.85)]",
+    "bg-accent text-white shadow-[0_8px_20px_-8px_rgba(31,58,95,0.5)] hover:bg-accent-soft hover:shadow-[0_10px_24px_-8px_rgba(31,58,95,0.6)]",
   secondary:
-    "border border-line bg-ink-800/60 text-white hover:border-white/20 hover:bg-ink-700",
-  ghost: "text-white/70 hover:text-white",
+    "border border-line bg-surface text-ink hover:border-ink/20 hover:bg-surface-2",
 };
 
 type Props = {
@@ -32,8 +31,18 @@ export function Button({ href, children, variant = "primary", className = "" }: 
     );
   }
 
-  // Everything else — external URLs, mailto, and file links like /resume.pdf —
-  // opens in a new tab.
+  // mailto: (and tel:) should open in the same context — a new browser tab is
+  // useless for these and gets left behind as a blank page.
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
+  // External URLs and local file links (e.g. /resume.pdf) open in a new tab so
+  // the visitor doesn't lose the portfolio.
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
       {children}

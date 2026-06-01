@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Dark premium SaaS palette
+        // Warm editorial light palette
+        paper: "#faf8f5", // page background
+        surface: "#ffffff", // cards
+        "surface-2": "#f4f0e9", // subtle insets / hovers
         ink: {
-          950: "#08080a",
-          900: "#0b0b0e",
-          800: "#111114",
-          700: "#17171c",
+          DEFAULT: "#1c1917", // primary text (warm near-black)
         },
-        line: "rgba(255,255,255,0.08)",
+        line: "rgba(28, 25, 23, 0.10)", // hairline borders on light
         accent: {
-          DEFAULT: "#7c5cff",
-          soft: "#a48bff",
+          DEFAULT: "#1f3a5f", // refined navy
+          soft: "#2c5282", // readable navy for eyebrows/labels
         },
       },
       fontFamily: {

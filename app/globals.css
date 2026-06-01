@@ -3,31 +3,36 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  /* keep anchored sections clear of any sticky nav */
-  scroll-padding-top: 5rem;
+  /* keep anchored sections clear of the 4rem (h-16) sticky nav, plus breathing room */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  @apply bg-ink-950 text-white antialiased;
+  @apply bg-paper text-ink antialiased;
+}
+
+::selection {
+  background-color: rgba(31, 58, 95, 0.15);
+  color: #1c1917;
 }
 
 @layer components {
   /* Reusable premium card surface */
   .card {
-    @apply rounded-2xl border border-line bg-ink-800/60 backdrop-blur-sm;
+    @apply rounded-2xl border border-line bg-surface shadow-[0_1px_2px_rgba(28,25,23,0.04),0_8px_24px_-12px_rgba(28,25,23,0.10)];
   }
 
-  /* Subtle radial glow used behind the hero and section headers */
+  /* Subtle warm glow used behind the hero and section headers */
   .glow {
     background: radial-gradient(
       60% 60% at 50% 0%,
-      rgba(124, 92, 255, 0.18) 0%,
-      rgba(124, 92, 255, 0) 70%
+      rgba(31, 58, 95, 0.10) 0%,
+      rgba(31, 58, 95, 0) 70%
     );
   }
 }
