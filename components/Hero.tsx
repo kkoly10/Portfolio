@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { profile, heroStack } from "@/lib/data";
 import { Button } from "./ui/Button";
@@ -9,11 +10,20 @@ import { GitHubIcon, MailIcon, DownloadIcon } from "./ui/icons";
 
 export function Hero() {
   const reduce = useReducedMotion();
-  const enter = (delay: number) => ({
-    initial: reduce ? false : { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const },
-  });
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  // Only apply the hidden initial state after mount, so the server-rendered HTML
+  // (and any no-JS browser) shows the hero immediately instead of at opacity 0.
+  const animate = mounted && !reduce;
+  const enter = (delay: number) =>
+    animate
+      ? {
+          initial: { opacity: 0, y: 20 } as const,
+          animate: { opacity: 1, y: 0 } as const,
+          transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const },
+        }
+      : {};
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -52,7 +62,7 @@ export function Hero() {
 
           {/* Stack preview */}
           <div className="mt-10">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-ink/40">
+            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-ink/55">
               Core stack
             </p>
             <div className="flex flex-wrap gap-2">
@@ -77,7 +87,7 @@ export function Hero() {
                 alt={`Portrait of ${profile.name}, ${profile.title}`}
                 fill
                 priority
-                sizes="(max-width: 1024px) 13rem, 340px"
+                sizes="(max-width: 640px) 11rem, (max-width: 1024px) 13rem, 340px"
                 className="object-cover object-top"
               />
             </div>

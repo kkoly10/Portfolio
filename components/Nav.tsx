@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/lib/data";
 import { Button } from "./ui/Button";
+import { MobileMenu } from "./MobileMenu";
 
 const links = [
   { href: "#projects", label: "Projects" },
@@ -22,16 +23,18 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-ink/60 transition-colors hover:text-ink"
+              className="text-sm text-ink/70 transition-colors hover:text-ink"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        <Button href={profile.resume} variant="secondary" className="hidden sm:inline-flex">
+        <Button href={profile.resume} variant="secondary" className="hidden md:inline-flex">
           Resume
         </Button>
+
+        <MobileMenu links={links} />
       </nav>
     </header>
   );

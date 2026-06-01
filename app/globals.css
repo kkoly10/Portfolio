@@ -8,8 +8,8 @@
 
 html {
   scroll-behavior: smooth;
-  /* keep anchored sections clear of any sticky nav */
-  scroll-padding-top: 5rem;
+  /* keep anchored sections clear of the 4rem (h-16) sticky nav, plus breathing room */
+  scroll-padding-top: 5.5rem;
 }
 
 body {

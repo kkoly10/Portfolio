@@ -8,17 +8,13 @@ import { Pill } from "./ui/Pill";
 import { GitHubIcon, ExternalIcon } from "./ui/icons";
 
 // Polished placeholder shown until a real screenshot is dropped into /public/projects.
-function ThumbPlaceholder({ name }: { name: string }) {
+function ThumbPlaceholder({ name, thumbnail }: { name: string; thumbnail: string }) {
   return (
-    <div className="glow flex h-full w-full flex-col items-center justify-center bg-surface-2 text-center">
-      <div className="rounded-xl border border-dashed border-ink/15 px-5 py-4">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-surface-2 text-center">
+      <div className="rounded-xl border border-dashed border-ink/20 px-5 py-4">
         <p className="text-sm font-medium text-ink/80">{name}</p>
-        <p className="mt-1 text-xs text-ink/40">
-          Screenshot goes here
-        </p>
-        <p className="mt-0.5 text-[11px] text-ink/30">
-          /public/projects/{name.toLowerCase().replace(/\s+/g, "")}.png
-        </p>
+        <p className="mt-1 text-xs text-ink/55">Screenshot goes here</p>
+        <p className="mt-0.5 text-[11px] text-ink/45">/public{thumbnail}</p>
       </div>
     </div>
   );
@@ -38,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
         className="relative block aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2"
       >
         {imgFailed ? (
-          <ThumbPlaceholder name={project.name} />
+          <ThumbPlaceholder name={project.name} thumbnail={project.thumbnail} />
         ) : (
           <Image
             src={project.thumbnail}

@@ -32,8 +32,18 @@ export function Button({ href, children, variant = "primary", className = "" }: 
     );
   }
 
-  // Everything else — external URLs, mailto, and file links like /resume.pdf —
-  // opens in a new tab.
+  // mailto: (and tel:) should open in the same context — a new browser tab is
+  // useless for these and gets left behind as a blank page.
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
+  // External URLs and local file links (e.g. /resume.pdf) open in a new tab so
+  // the visitor doesn't lose the portfolio.
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
       {children}
