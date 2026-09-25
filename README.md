@@ -1,5 +1,11 @@
-# Komlan Kouhiko — Portfolio
+# Komlan Kouhiko — Software Engineering Portfolio
 
-One-page SaaS / AI engineer portfolio built with Next.js, TypeScript, and Tailwind CSS.
+Personal portfolio for Komlan Kouhiko, aligned to the current software-engineering resume.
 
-See the open pull request for the full implementation.
+Featured work:
+- Korent — multi-tenant event rental SaaS
+- Couranr Market — ecommerce and local-delivery platform
+- Couranr OS — delivery-operations platform
+- TankSight — inspection reporting and client-portal prototype
+
+Built with Next.js, TypeScript, and Tailwind CSS. The portfolio also links to the current resume and additional shipped projects.

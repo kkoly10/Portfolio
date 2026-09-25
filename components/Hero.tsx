@@ -34,7 +34,7 @@ export function Hero() {
         <motion.div className="max-w-2xl" {...enter(0)}>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-ink/70">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            Available for SaaS & AI build projects
+            Available for full-stack & product engineering opportunities
           </div>
 
           <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl">

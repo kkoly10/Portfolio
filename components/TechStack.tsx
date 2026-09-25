@@ -8,7 +8,7 @@ export function TechStack() {
       id="stack"
       eyebrow="Toolbox"
       title="Technical Stack"
-      subtitle="The technologies I reach for to build reliable, scalable products."
+      subtitle="The technologies and engineering practices I use across my current portfolio."
     >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {techStack.map((group) => (

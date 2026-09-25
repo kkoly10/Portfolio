@@ -34,7 +34,7 @@ export default function OgImage() {
           }}
         >
           <div style={{ width: 12, height: 12, borderRadius: 999, background: "#10b981" }} />
-          Available for SaaS &amp; AI builds
+          Full-stack &amp; product engineering
         </div>
         <div style={{ fontSize: 84, fontWeight: 700, marginTop: 24, letterSpacing: -2 }}>
           {profile.name}
@@ -43,10 +43,10 @@ export default function OgImage() {
           {profile.title}
         </div>
         <div style={{ fontSize: 28, color: "#57534e", marginTop: 32, maxWidth: 900 }}>
-          Production-ready SaaS products, AI/LLM workflows, dashboards, and client portals.
+          SaaS, ecommerce, delivery operations, data/reporting, testing, and AI-assisted workflows.
         </div>
         <div style={{ display: "flex", gap: 16, marginTop: 40, fontSize: 22, color: "#78716c" }}>
-          Next.js · React · TypeScript · Supabase · Stripe · Anthropic
+          Next.js · TypeScript · Supabase/PostgreSQL · MongoDB · REST APIs · Testing
         </div>
       </div>
     ),

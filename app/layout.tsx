@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://komlankouhiko.com";
 const ogDescription =
-  "Production-ready SaaS products, AI/LLM workflows, dashboards, and client portals.";
+  "Full-stack product engineering across SaaS, ecommerce, delivery operations, data/reporting, testing, and AI-assisted workflows.";
 
 export const viewport: Viewport = {
   themeColor: "#faf8f5",
@@ -19,15 +19,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: `${profile.name} — ${profile.title}`,
   description:
-    "Full-stack developer building production-ready SaaS products, AI/LLM workflows, dashboards, and client portals with Next.js, React, TypeScript, Supabase, Stripe, and Anthropic.",
+    "Full-stack software engineer building SaaS, ecommerce, delivery-operations, and data/reporting products with Next.js, React, TypeScript, Supabase/PostgreSQL, MongoDB, REST APIs, testing, and CI/CD.",
   keywords: [
     "Komlan Kouhiko",
-    "Full-Stack Developer",
+    "Full-Stack Software Engineer",
+    "Product Engineer",
     "SaaS Developer",
-    "AI Engineer",
     "Next.js",
     "Supabase",
-    "Stripe",
+    "PostgreSQL",
+    "MongoDB",
+    "REST APIs",
+    "Playwright",
     "Anthropic",
     "OpenAI",
   ],

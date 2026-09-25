@@ -7,7 +7,7 @@ export function WhatIBuild() {
       id="build"
       eyebrow="Capabilities"
       title="What I Build"
-      subtitle="The kinds of products and systems I ship for startups and service businesses."
+      subtitle="The product and engineering areas reflected in my current portfolio and resume."
     >
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {whatIBuild.map((item) => (

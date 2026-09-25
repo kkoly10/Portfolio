@@ -1,15 +1,14 @@
 # Project screenshots
 
-These thumbnails are live-site captures taken with Playwright headless Chromium
-(see `scripts/screenshots.mjs`). They are downsized to 1600×1000 (16:10) to match
-the project card aspect ratio.
+These thumbnails are live-site captures for the four projects featured on the
+current software-engineering resume. The capture viewport is 1600×1000 (16:10)
+to match the portfolio card aspect ratio.
 
-- proveo.jpg
-- kocreit.jpg
-- fleiko.jpg
 - korent.jpg
-- crecystudio.jpg
+- couranr-market.jpg
+- couranr-os.jpg
+- tanksight.jpg
 
 To refresh them after a site redesign:
 
-    node scripts/screenshots.mjs        # re-capture all five at the card aspect ratio
+    node scripts/screenshots.mjs

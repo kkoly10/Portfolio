@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { projects, profile } from "@/lib/data";
+import { additionalProjects, projects, profile } from "@/lib/data";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Pill } from "@/components/ui/Pill";
+import { ExternalIcon, GitHubIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
-  title: `Work — SaaS Products by ${profile.name}`,
+  title: `Work — Product Engineering by ${profile.name}`,
   description:
-    "Production SaaS platforms designed and built by Komlan Kouhiko, including AI-integrated tools, dashboards, client portals, and booking and payment systems.",
+    "Selected product engineering work by Komlan Kouhiko across multi-tenant SaaS, ecommerce, delivery operations, data/reporting portals, testing, and AI-assisted workflows.",
   alternates: { canonical: "/work" },
 };
 
@@ -22,11 +23,12 @@ export default function WorkPage() {
           Portfolio
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Featured SaaS Products
+          Selected Product Engineering Work
         </h1>
         <p className="mt-4 max-w-2xl text-base text-ink/60 sm:text-lg">
-          Five production SaaS platforms I&apos;ve designed and shipped end to end.
-          Each one ships real authentication, billing, dashboards, and AI workflows.
+          The same four projects featured on my current software-engineering resume:
+          rental SaaS, ecommerce/local delivery, delivery operations, and an
+          inspection-reporting prototype.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -58,6 +60,45 @@ export default function WorkPage() {
             </Link>
           ))}
         </div>
+
+        <section className="mt-16 border-t border-line pt-10" aria-labelledby="additional-work">
+          <p className="text-xs font-medium uppercase tracking-widest text-ink/50">
+            Additional portfolio
+          </p>
+          <h2 id="additional-work" className="mt-2 text-2xl font-semibold tracking-tight">
+            More products I&apos;ve built and operated
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {additionalProjects.map((project) => (
+              <article key={project.name} className="rounded-2xl border border-line bg-surface p-5">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <h3 className="text-lg font-semibold tracking-tight">{project.name}</h3>
+                  <div className="flex items-center gap-3 text-xs text-ink/55">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 hover:text-accent"
+                    >
+                      <ExternalIcon className="h-3.5 w-3.5" /> Live
+                    </a>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 hover:text-accent"
+                    >
+                      <GitHubIcon className="h-3.5 w-3.5" /> GitHub
+                    </a>
+                  </div>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-ink/60">
+                  {project.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
       <Footer />
     </>

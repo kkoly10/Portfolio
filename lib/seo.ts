@@ -84,7 +84,7 @@ export function projectsItemListSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Featured SaaS Products",
+    name: "Selected Product Engineering Work",
     itemListElement: projects.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,

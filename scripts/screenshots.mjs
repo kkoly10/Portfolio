@@ -1,4 +1,4 @@
-// One-off script: capture project thumbnails from the live sites.
+// One-off script: capture thumbnails for the projects featured on the current resume.
 // Run with: node scripts/screenshots.mjs
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
@@ -7,20 +7,16 @@ const OUT = "public/projects";
 mkdirSync(OUT, { recursive: true });
 
 const sites = [
-  { name: "proveo", url: "https://proveohq.com" },
-  { name: "kocreit", url: "https://kocreit.com" },
-  { name: "fleiko", url: "https://fleiko.com" },
   { name: "korent", url: "https://korent.app" },
-  { name: "crecystudio", url: "https://crecystudio.com" },
+  { name: "couranr-market", url: "https://www.couranrmarket.com" },
+  { name: "couranr-os", url: "https://www.couranr.com" },
+  { name: "tanksight", url: "https://tanksight-prototype.vercel.app" },
 ];
 
 const browser = await chromium.launch();
-// 16:10 viewport to match the card aspect ratio; deviceScaleFactor 2 for crisp output.
 const context = await browser.newContext({
   viewport: { width: 1600, height: 1000 },
   deviceScaleFactor: 2,
-  // The sandbox routes egress through a TLS-intercepting proxy whose cert
-  // Chromium doesn't trust; the sites themselves are valid.
   ignoreHTTPSErrors: true,
 });
 
@@ -30,7 +26,6 @@ for (const site of sites) {
   try {
     await page.goto(site.url, { waitUntil: "networkidle", timeout: 45000 });
     await page.waitForTimeout(2000);
-    // Dismiss cookie/consent banners so they don't obscure the hero.
     const labels = ["Accept", "Accept all", "I agree", "Got it", "Allow", "OK", "Reject", "Decline"];
     for (const label of labels) {
       const btn = page.getByRole("button", { name: label, exact: false }).first();
@@ -39,17 +34,24 @@ for (const site of sites) {
         break;
       }
     }
-    await page.waitForTimeout(1200); // let the banner animate out
-    await page.screenshot({ path: `${OUT}/${site.name}.jpg`, type: "jpeg", quality: 82 }); // viewport-only (above the fold)
+    await page.waitForTimeout(1200);
+    await page.screenshot({
+      path: `${OUT}/${site.name}.jpg`,
+      type: "jpeg",
+      quality: 82,
+    });
   } catch (err) {
     status = `FAILED: ${err.message.split("\n")[0]}`;
-    // Capture whatever rendered so we at least get something.
     try {
-      await page.screenshot({ path: `${OUT}/${site.name}.jpg`, type: "jpeg", quality: 82 });
+      await page.screenshot({
+        path: `${OUT}/${site.name}.jpg`,
+        type: "jpeg",
+        quality: 82,
+      });
       status += " (captured partial)";
     } catch {}
   }
-  console.log(`${site.name.padEnd(12)} ${site.url.padEnd(28)} -> ${status}`);
+  console.log(`${site.name.padEnd(16)} ${site.url.padEnd(42)} -> ${status}`);
   await page.close();
 }
 

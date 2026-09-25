@@ -4,15 +4,12 @@ export const profile = {
   name: "Komlan Kouhiko",
   firstName: "Komlan",
   lastName: "Kouhiko",
-  title: "Full-Stack Developer | AI/LLM SaaS Builder",
-  // Plain job title for structured data (no pipe / branding).
+  title: "Full-Stack Software Engineer | Product Engineering",
   jobTitle: "Full-Stack Software Engineer",
   intro:
-    "I build production-ready SaaS products, dashboards, portals, AI-assisted workflows, and business operations tools using Next.js, React, TypeScript, Supabase, Stripe, OpenAI, Anthropic, and Vercel.",
-  // Longer, keyword-rich prose for crawlers and the Person schema description.
-  bio: "Komlan Kouhiko is a full-stack software engineer who designs and ships production-ready SaaS products end to end — from authentication, dashboards, and Stripe billing to AI/LLM workflows built on the OpenAI and Anthropic APIs. He works primarily with Next.js, React, TypeScript, Supabase, and Vercel, and has independently built and launched five live SaaS platforms across service operations, IT support, fleet management, rentals, and web studio workflows.",
+    "I build SaaS, ecommerce, delivery-operations, and data/reporting products end to end — from requirements and data modeling through APIs, auth, payments, UI, testing, deployment, and production debugging.",
+  bio: "Komlan Kouhiko is a full-stack software engineer with 2+ years of hands-on experience building SaaS, ecommerce, delivery-operations, and data/reporting products. His work spans Next.js, React, TypeScript, Supabase/PostgreSQL, MongoDB, REST APIs, authentication and role-based access, payments, automated testing, CI/CD, production debugging, and AI-assisted development. His regulated laboratory background adds strong QA, traceability, documentation, and data-integrity discipline.",
   github: "https://github.com/kkoly10",
-  // Public LinkedIn profile URL (the linkedin.com/in/... form).
   linkedin: "https://www.linkedin.com/in/komlan-crecy-olympe-kouhiko-60aa85407/",
   email,
   mailto: `mailto:${email}`,
@@ -20,31 +17,33 @@ export const profile = {
   photo: "/komlan.jpg",
 };
 
-// Identity graph for SEO (schema.org `sameAs`) and the footer. Only real,
-// publicly resolvable profile URLs are included.
 export const socials = [
   { label: "GitHub", href: profile.github },
   ...(profile.linkedin ? [{ label: "LinkedIn", href: profile.linkedin }] : []),
 ];
 
-// Skills surfaced in the Person schema `knowsAbout`.
 export const knowsAbout = [
-  "Full-Stack Development",
-  "SaaS Development",
+  "Full-Stack Software Engineering",
+  "Product Engineering",
   "Next.js",
   "React",
   "TypeScript",
-  "Node.js",
   "Supabase",
   "PostgreSQL",
+  "MongoDB",
+  "REST APIs",
+  "Authentication and Row-Level Security",
   "Stripe",
+  "Playwright",
+  "Vitest",
+  "Sentry",
+  "CI/CD",
+  "Anthropic API",
   "OpenAI API",
-  "Anthropic Claude API",
-  "AI/LLM Workflows",
-  "Vercel",
+  "Claude Code",
+  "OpenAI Codex",
 ];
 
-// Turn a project name into a URL slug, e.g. "Kocre IT" -> "kocre-it".
 export function slugify(value: string): string {
   return value
     .toLowerCase()
@@ -52,16 +51,15 @@ export function slugify(value: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
-// Tech shown as pills under the hero intro.
 export const heroStack = [
   "Next.js",
-  "React",
   "TypeScript",
-  "Supabase",
-  "Stripe",
-  "OpenAI",
-  "Anthropic",
-  "Vercel",
+  "Supabase/PostgreSQL",
+  "REST APIs",
+  "Playwright",
+  "Vitest",
+  "Claude Code",
+  "OpenAI Codex",
 ];
 
 export type Project = {
@@ -71,7 +69,6 @@ export type Project = {
   github: string;
   title: string;
   description: string;
-  /** Longer, indexable write-up shown on the per-project page. */
   longDescription: string;
   stack: string[];
   thumbnail: string;
@@ -79,79 +76,127 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "proveo",
-    name: "Proveo",
-    live: "https://proveohq.com",
-    github: "https://github.com/kkoly10/proveo",
-    title: "AI-Integrated SaaS for Service Businesses",
-    description:
-      "Built a SaaS platform that helps service businesses turn before-and-after project photos into branded proof assets, leads, quotes, invoices, appointments, client workflows, Stripe billing, and AI caption workflows.",
-    longDescription:
-      "Proveo is a SaaS platform for service businesses that turns before-and-after project photos into branded proof assets and a full customer pipeline. I designed and built the product end to end: lead capture, quotes, invoices, appointment scheduling, and client workflows, all backed by Stripe billing and subscription management. AI caption workflows powered by the OpenAI and Anthropic APIs generate on-brand marketing copy from uploaded photos, while Cloudinary handles image storage and transformation. The stack is Next.js, React, and TypeScript on Supabase (PostgreSQL, auth, storage), deployed on Vercel.",
-    stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Supabase",
-      "Stripe",
-      "OpenAI",
-      "Anthropic",
-      "Cloudinary",
-      "Vercel",
-    ],
-    thumbnail: "/projects/proveo.jpg",
-  },
-  {
-    slug: "kocre-it",
-    name: "Kocre IT",
-    live: "https://kocreit.com",
-    github: "https://github.com/kkoly10/IT-Support-E-commerce",
-    title: "AI-Assisted Remote IT Support Platform",
-    description:
-      "Built an IT support platform with client portal, admin dashboard, support tickets, onboarding readiness, document/access tracking, suggested replies, SOP drafts, and guarded AI support workflows.",
-    longDescription:
-      "Kocre IT is a remote IT support platform for small businesses. I built a client-facing portal and an admin dashboard around a support-ticket system, onboarding-readiness tracking, and document/access management. Guarded AI workflows on the Anthropic Claude API draft suggested replies and standard operating procedures for support staff, with prompt guardrails that keep responses scoped and safe. Built with Next.js, React, and Supabase, deployed on Vercel.",
-    stack: ["Next.js", "React", "Supabase", "Anthropic", "AI Workflows", "Vercel"],
-    thumbnail: "/projects/kocreit.jpg",
-  },
-  {
-    slug: "fleiko",
-    name: "Fleiko",
-    live: "https://fleiko.com",
-    github: "https://github.com/kkoly10/Fleet-management-",
-    title: "Fleet Management SaaS with AI Copilot",
-    description:
-      "Built a fleet operations platform for vehicles, drivers, maintenance, repairs, documents, expenses, readiness, reports, and AI Copilot-style fleet insights.",
-    longDescription:
-      "Fleiko is a fleet-management SaaS that gives operators a single place to run their vehicles, drivers, maintenance, and compliance. I built modules for vehicle and driver records, maintenance and repair tracking, document expiry, expense logging, readiness scoring, and reporting, with Mapbox for location features and Stripe for billing. An AI Copilot on the Anthropic API surfaces plain-language fleet insights from the operational data. Built with Next.js, React, and Supabase on Vercel.",
-    stack: ["Next.js", "React", "Supabase", "Stripe", "Anthropic", "Mapbox", "Vercel"],
-    thumbnail: "/projects/fleiko.jpg",
-  },
-  {
     slug: "korent",
     name: "Korent",
     live: "https://korent.app",
     github: "https://github.com/kkoly10/rental-software",
-    title: "Rental Booking and Operations SaaS",
+    title: "Multi-Tenant Event Rental SaaS",
     description:
-      "Built a rental platform with storefronts, product catalogs, availability, checkout, deposits, order management, digital waivers, delivery routing, reminders, and admin workflows.",
+      "Built and hardened a multi-tenant rental platform spanning storefront checkout, inventory and availability, deposits/payments, customer and order workflows, PDF documents, delivery routing, and role-based dashboards.",
     longDescription:
-      "Korent is a rental-booking and operations SaaS for equipment and party-rental businesses. I built customer-facing storefronts with product catalogs and real-time availability, online checkout with deposits via Stripe, digital waivers, order management, delivery routing, and automated SMS/email reminders through Twilio and Resend. An admin workflow ties scheduling, fulfillment, and customer communication together. Built with Next.js, React, and Supabase on Vercel.",
-    stack: ["Next.js", "React", "Supabase", "Stripe", "Twilio", "Resend", "Vercel"],
+      "Korent is a multi-tenant event-rental operations platform. I built and hardened workflows across storefront checkout, inventory and real-time availability, deposits and payments, customer and order management, PDF documents, delivery routing, reminders, and role-based dashboards. During pre-beta hardening, I found and fixed a cross-tenant catalog isolation defect and a Stripe webhook race condition, then validated the affected workflows with automated and manual regression testing.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase/PostgreSQL",
+      "Stripe",
+      "Zod",
+      "jsPDF",
+      "Playwright",
+      "Leaflet",
+    ],
     thumbnail: "/projects/korent.jpg",
   },
   {
-    slug: "crecystudio",
-    name: "CrecyStudio",
-    live: "https://crecystudio.com",
-    github: "https://github.com/kkoly10/website-builder",
-    title: "Web Studio Platform and Client Project Workspace",
+    slug: "couranr-market",
+    name: "Couranr Market",
+    live: "https://www.couranrmarket.com",
+    github: "https://github.com/kkoly10/Couranr-market",
+    title: "Ecommerce & Local Delivery Platform",
     description:
-      "Built a studio platform with website intake, estimates, scope snapshots, client portal, proposals, invoices, revision tracking, previews, and launch-readiness workflows.",
+      "Built shopper, storefront, admin, delivery, and API surfaces for a direct-to-consumer commerce/local-delivery system, including checkout/payment flows, address and routing integrations, and automated test gates.",
     longDescription:
-      "CrecyStudio is a web-studio platform and client project workspace. I built a structured intake-to-launch pipeline: project intake forms, estimates, scope snapshots, proposals, invoices, revision tracking, live previews, and launch-readiness checks, all surfaced to clients through a dedicated portal. The result replaces scattered email and spreadsheets with one workspace per engagement. Built with Next.js, React, and Supabase on Vercel.",
-    stack: ["Next.js", "React", "Supabase", "Client Portal", "Vercel"],
-    thumbnail: "/projects/crecystudio.jpg",
+      "Couranr Market is a direct-to-consumer ecommerce and local-delivery platform. I built shopper, storefront, admin, delivery, and API surfaces, including checkout/payment flows, address and routing integrations, authentication and role-scoped data access, pricing controls, and automated test gates. AI-assisted shopping workflows are separated from authoritative money, inventory, tax, delivery-eligibility, and order-finalization logic, which remains deterministic on the server.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase/PostgreSQL",
+      "Stripe",
+      "Anthropic",
+      "Resend",
+      "Zod",
+    ],
+    thumbnail: "/projects/couranr-market.jpg",
+  },
+  {
+    slug: "couranr-os",
+    name: "Couranr OS",
+    live: "https://www.couranr.com",
+    github: "https://github.com/kkoly10/couranr-os",
+    title: "Delivery Operations Platform",
+    description:
+      "Built multi-role delivery workflows covering request intake, immutable quote versions, payment obligations, service plans, dispatch, driver execution, tracking/proof, returns/refunds, and operations review.",
+    longDescription:
+      "Couranr OS is a delivery-operations platform for managing the workflow from request intake through fulfillment and review. I built multi-role flows for immutable quote versions, payment obligations, service plans, dispatch, driver execution, tracking and proof, returns/refunds, and operational review. The platform uses role-scoped data access, Supabase Row-Level Security, server-authoritative pricing, idempotency controls, migration safety, and release/test gates.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase/PostgreSQL",
+      "Stripe",
+      "Resend",
+      "Anthropic",
+      "Release/Test Gates",
+    ],
+    thumbnail: "/projects/couranr-os.jpg",
+  },
+  {
+    slug: "tanksight",
+    name: "TankSight",
+    live: "https://tanksight-prototype.vercel.app",
+    github: "https://github.com/kkoly10/tanksight-prototype",
+    title: "Inspection Reporting & Client Portal Prototype",
+    description:
+      "Built a role-scoped client/inspector portal that converts processed PAUT-style measurements into heatmaps, region summaries, historical trends, paginated APIs/data exploration, and downloadable PDF reports.",
+    longDescription:
+      "TankSight is an inspection-reporting and client-portal prototype for processed PAUT-style tank-floor measurements. I built role-scoped client and inspector experiences that turn structured measurements into heatmaps, region summaries, historical trends, paginated APIs/data exploration, and downloadable PDF reports. The implementation includes MongoDB aggregation, a layered domain/service/repository architecture, and 22 Vitest domain tests.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Konva",
+      "Chart.js",
+      "React-PDF",
+      "Vitest",
+    ],
+    thumbnail: "/projects/tanksight.jpg",
+  },
+];
+
+export type AdditionalProject = {
+  name: string;
+  live: string;
+  github: string;
+  description: string;
+};
+
+export const additionalProjects: AdditionalProject[] = [
+  {
+    name: "Proveo",
+    live: "https://proveohq.com",
+    github: "https://github.com/kkoly10/proveo",
+    description: "AI-integrated service-business SaaS, trialed with 14 active users.",
+  },
+  {
+    name: "Fleiko",
+    live: "https://fleiko.com",
+    github: "https://github.com/kkoly10/Fleet-management-",
+    description: "Fleet-management SaaS with operational dashboards and an AI Copilot.",
+  },
+  {
+    name: "Crecy's Cleaning",
+    live: "https://crecycleaning.com",
+    github: "https://github.com/kkoly10/Crecy-cleaning",
+    description: "Customer-facing service website with responsive quote and lead-capture flows.",
+  },
+  {
+    name: "Kocre IT",
+    live: "https://kocreit.com",
+    github: "https://github.com/kkoly10/IT-Support-E-commerce",
+    description: "AI-assisted remote IT support platform with client and admin workflows.",
   },
 ];
 
@@ -161,56 +206,56 @@ export function getProject(slug: string): Project | undefined {
 
 export const whatIBuild = [
   {
-    title: "SaaS MVPs",
+    title: "SaaS & Operations Platforms",
     description:
-      "End-to-end products from auth and billing to dashboards — shipped fast and built to scale.",
+      "Multi-role products with auth, permissions, billing, dashboards, and operational workflows.",
   },
   {
-    title: "AI/LLM Workflows",
+    title: "Ecommerce & Checkout",
     description:
-      "Assistants, suggested replies, and guarded automations powered by OpenAI and Anthropic.",
+      "Storefront, pricing, inventory, payments, order finalization, and customer-facing flows.",
   },
   {
-    title: "Admin Dashboards",
+    title: "Delivery Operations",
     description:
-      "Operational control panels with metrics, tables, roles, and real-time data.",
+      "Request intake, quoting, dispatch, driver execution, proof, tracking, and review workflows.",
   },
   {
-    title: "Client Portals",
+    title: "Data & Reporting Portals",
     description:
-      "Secure customer-facing portals for documents, onboarding, and account workflows.",
+      "Role-scoped dashboards that turn structured data into trends, visualizations, APIs, and PDFs.",
   },
   {
-    title: "Booking & Payment Systems",
+    title: "AI-Assisted Workflows",
     description:
-      "Availability, checkout, deposits, and Stripe billing wired into clean operations flows.",
+      "Anthropic/OpenAI integrations with guardrails, human review, and deterministic business logic where correctness matters.",
   },
   {
-    title: "Internal Business Tools",
+    title: "Quality & Production Hardening",
     description:
-      "Custom tooling that replaces spreadsheets and manual ops with reliable software.",
+      "Regression testing, test gates, monitoring, root-cause analysis, security review, and production debugging.",
   },
 ];
 
 export const techStack = [
   {
-    group: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    group: "Frontend & Application",
+    items: ["Next.js", "React", "TypeScript", "JavaScript", "Responsive UI"],
   },
   {
-    group: "Backend",
-    items: ["Supabase", "PostgreSQL", "API Routes", "Server Actions"],
+    group: "Backend, Data & Auth",
+    items: ["Supabase", "PostgreSQL", "MongoDB", "REST/JSON APIs", "RLS", "Auth/Roles"],
   },
   {
-    group: "SaaS",
-    items: ["Stripe", "Auth", "Dashboards", "Admin Panels", "Client Portals"],
+    group: "Quality & Delivery",
+    items: ["Playwright", "Vitest", "Zod", "Sentry", "GitHub", "Vercel CI/CD"],
   },
   {
-    group: "AI/LLM",
-    items: ["OpenAI API", "Anthropic Claude API", "AI Assistants", "Prompt Guardrails"],
+    group: "Payments & Integrations",
+    items: ["Stripe", "Resend", "Google APIs", "Mapbox APIs"],
   },
   {
-    group: "Tools",
-    items: ["GitHub", "Vercel", "Cloudinary", "Resend", "Playwright", "Sentry"],
+    group: "AI & Developer Tooling",
+    items: ["Anthropic/OpenAI APIs", "Claude Code", "OpenAI Codex", "Prompt Guardrails"],
   },
 ];
