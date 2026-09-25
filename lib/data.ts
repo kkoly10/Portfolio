@@ -112,7 +112,7 @@ export const projects: Project[] = [
     longDescription:
       "Kocre IT is a remote IT support platform for small businesses. I built a client-facing portal and an admin dashboard around a support-ticket system, onboarding-readiness tracking, and document/access management. Guarded AI workflows on the Anthropic Claude API draft suggested replies and standard operating procedures for support staff, with prompt guardrails that keep responses scoped and safe. Built with Next.js, React, and Supabase, deployed on Vercel.",
     stack: ["Next.js", "React", "Supabase", "Anthropic", "AI Workflows", "Vercel"],
-    thumbnail: "/projects/kocreit.png",
+    thumbnail: "/projects/kocreit.jpg",
   },
   {
     slug: "fleiko",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     longDescription:
       "CrecyStudio is a web-studio platform and client project workspace. I built a structured intake-to-launch pipeline: project intake forms, estimates, scope snapshots, proposals, invoices, revision tracking, live previews, and launch-readiness checks, all surfaced to clients through a dedicated portal. The result replaces scattered email and spreadsheets with one workspace per engagement. Built with Next.js, React, and Supabase on Vercel.",
     stack: ["Next.js", "React", "Supabase", "Client Portal", "Vercel"],
-    thumbnail: "/projects/crecystudio.png",
+    thumbnail: "/projects/crecystudio.jpg",
   },
 ];
 

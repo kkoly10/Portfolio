@@ -40,12 +40,12 @@ for (const site of sites) {
       }
     }
     await page.waitForTimeout(1200); // let the banner animate out
-    await page.screenshot({ path: `${OUT}/${site.name}.png` }); // viewport-only (above the fold)
+    await page.screenshot({ path: `${OUT}/${site.name}.jpg`, type: "jpeg", quality: 82 }); // viewport-only (above the fold)
   } catch (err) {
     status = `FAILED: ${err.message.split("\n")[0]}`;
     // Capture whatever rendered so we at least get something.
     try {
-      await page.screenshot({ path: `${OUT}/${site.name}.png` });
+      await page.screenshot({ path: `${OUT}/${site.name}.jpg`, type: "jpeg", quality: 82 });
       status += " (captured partial)";
     } catch {}
   }
