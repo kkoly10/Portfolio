@@ -187,16 +187,16 @@ export const additionalProjects: AdditionalProject[] = [
     description: "Fleet-management SaaS with operational dashboards and an AI Copilot.",
   },
   {
-    name: "Crecy's Cleaning",
-    live: "https://crecycleaning.com",
-    github: "https://github.com/kkoly10/Crecy-cleaning",
-    description: "Customer-facing service website with responsive quote and lead-capture flows.",
+    name: "Couranr.com",
+    live: "https://www.couranr.com",
+    github: "https://github.com/kkoly10/couranr-os",
+    description: "Customer-facing same-day and business delivery experience backed by multi-role delivery operations.",
   },
   {
-    name: "Kocre IT",
-    live: "https://kocreit.com",
-    github: "https://github.com/kkoly10/IT-Support-E-commerce",
-    description: "AI-assisted remote IT support platform with client and admin workflows.",
+    name: "Crecy OS",
+    live: "https://crecyos.com",
+    github: "https://github.com/kkoly10/Property-management-",
+    description: "Property-management operating system for operators, residents, owners, and invited vendors, with lease, payment, maintenance, reconciliation, and portfolio workflows.",
   },
 ];
 
