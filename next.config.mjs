@@ -10,6 +10,7 @@ const nextConfig = {
       { source: "/work/kocre-it", destination: "https://kocreit.com", permanent: false },
       { source: "/work/fleiko", destination: "https://fleiko.com", permanent: false },
       { source: "/work/crecystudio", destination: "https://crecystudio.com", permanent: false },
+      { source: "/work/tanksight", destination: "https://github.com/kkoly10/tanksight-prototype", permanent: false },
     ];
   },
 };

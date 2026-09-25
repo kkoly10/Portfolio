@@ -6,6 +6,6 @@ Featured work:
 - Korent — multi-tenant event rental SaaS
 - Couranr Market — ecommerce and local-delivery platform
 - Couranr OS — delivery-operations platform
-- TankSight — inspection reporting and client-portal prototype
+- Crecy OS — property-management operating system
 
 Built with Next.js, TypeScript, and Tailwind CSS. The portfolio also links to the current resume and additional shipped projects.

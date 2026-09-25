@@ -9,7 +9,7 @@ export function Projects() {
       id="projects"
       eyebrow="Featured Work"
       title="Selected Product Engineering Work"
-      subtitle="The four projects featured on my current software-engineering resume, spanning rental SaaS, ecommerce/local delivery, delivery operations, and data/reporting."
+      subtitle="Selected full-stack products spanning rental SaaS, ecommerce/local delivery, delivery operations, and property management."
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {projects.map((project) => (

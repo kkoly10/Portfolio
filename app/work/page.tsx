@@ -26,9 +26,8 @@ export default function WorkPage() {
           Selected Product Engineering Work
         </h1>
         <p className="mt-4 max-w-2xl text-base text-ink/60 sm:text-lg">
-          The same four projects featured on my current software-engineering resume:
-          rental SaaS, ecommerce/local delivery, delivery operations, and an
-          inspection-reporting prototype.
+          Selected full-stack products spanning rental SaaS, ecommerce/local delivery,
+          delivery operations, and property management.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">

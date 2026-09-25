@@ -143,26 +143,26 @@ export const projects: Project[] = [
     thumbnail: "/projects/couranr-os.jpg",
   },
   {
-    slug: "tanksight",
-    name: "TankSight",
-    live: "https://tanksight-prototype.vercel.app",
-    github: "https://github.com/kkoly10/tanksight-prototype",
-    title: "Inspection Reporting & Client Portal Prototype",
+    slug: "crecy-os",
+    name: "Crecy OS",
+    live: "https://crecyos.com",
+    github: "https://github.com/kkoly10/Property-management-",
+    title: "Property Management Operating System",
     description:
-      "Built a role-scoped client/inspector portal that converts processed PAUT-style measurements into heatmaps, region summaries, historical trends, paginated APIs/data exploration, and downloadable PDF reports.",
+      "Built a multi-role property-management platform for operators, residents, owners, and invited vendors, with portfolio/import workflows, leases, rent generation, payments, reconciliation, maintenance, and operational controls.",
     longDescription:
-      "TankSight is an inspection-reporting and client-portal prototype for processed PAUT-style tank-floor measurements. I built role-scoped client and inspector experiences that turn structured measurements into heatmaps, region summaries, historical trends, paginated APIs/data exploration, and downloadable PDF reports. The implementation includes MongoDB aggregation, a layered domain/service/repository architecture, and 22 Vitest domain tests.",
+      "Crecy OS is a property-management operating system for operators, residents, owners, and invited vendors. I built the platform around secure multi-role access, portfolio/import workflows, document ingestion, lease activation, recurring rent generation, payment allocation, Stripe-connected payments and refunds, reconciliation, resident balances and payment history, maintenance intake, vendor workflows, audit/outbox traces, and scheduled operational workers. The system uses Supabase/PostgreSQL with strong tenant and property isolation, server-side payment controls, idempotent webhook handling, migration safety, and automated verification across application and database behavior.",
     stack: [
       "Next.js",
       "React",
       "TypeScript",
-      "MongoDB",
-      "Konva",
-      "Chart.js",
-      "React-PDF",
-      "Vitest",
+      "Supabase/PostgreSQL",
+      "Stripe",
+      "RLS",
+      "Payments/Reconciliation",
+      "Automated Testing",
     ],
-    thumbnail: "/projects/tanksight.jpg",
+    thumbnail: "/projects/crecyos.jpg",
   },
 ];
 
@@ -191,12 +191,6 @@ export const additionalProjects: AdditionalProject[] = [
     live: "https://www.couranr.com",
     github: "https://github.com/kkoly10/couranr-os",
     description: "Customer-facing same-day and business delivery experience backed by multi-role delivery operations.",
-  },
-  {
-    name: "Crecy OS",
-    live: "https://crecyos.com",
-    github: "https://github.com/kkoly10/Property-management-",
-    description: "Property-management operating system for operators, residents, owners, and invited vendors, with lease, payment, maintenance, reconciliation, and portfolio workflows.",
   },
 ];
 

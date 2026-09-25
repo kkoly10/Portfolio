@@ -10,7 +10,7 @@ const sites = [
   { name: "korent", url: "https://korent.app" },
   { name: "couranr-market", url: "https://www.couranrmarket.com" },
   { name: "couranr-os", url: "https://www.couranr.com" },
-  { name: "tanksight", url: "https://tanksight-prototype.vercel.app" },
+  { name: "crecyos", url: "https://crecyos.com" },
 ];
 
 const browser = await chromium.launch();
